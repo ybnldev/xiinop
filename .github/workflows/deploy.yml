@@ -1,32 +1,32 @@
-sudo name: Deploy Astro site to GitHub Pages
-sudo on:
-  sudo push:
-sudo branches: [ main ]
+name: Deploy Astro site to GitHub Pages
+on:
+  push:
+branches: [ main ]
 
-sudo permissions:
-sudo contents: read
-sudo pages: write
-sudo id-token: write
+permissions:
+contents: read
+pages: write
+id-token: write
 
-sudo jobs:
-sudo build:
-sudo runs-on: ubuntu-latest
-sudo steps:
-sudo - uses: actions/checkout@v4
+jobs:
+build:
+runs-on: ubuntu-latest
+steps:
+- uses: actions/checkout@v4
 
-sudo -uses: actions/setup-node@v4
-sudo with:
-sudo node-version: 20
+-uses: actions/setup-node@v4
+with:
+node-version: 20
 
-sudo - run: npm ci
-sudo - run: npm run build
+- run: npm ci
+- run: npm run build
 
-sudo - uses: actions/upload-pages-artifact@v3
-sudo with:
-sudo path: ./dist
+- uses: actions/upload-pages-artifact@v3
+with:
+path: ./dist
 
-sudo deploy:
-sudo needs: build
-sudo runs-on: ubuntu-latest
-sudo steps:
-sudo - uses: actions/deploy-pages@v4
+deploy:
+needs: build
+runs-on: ubuntu-latest
+steps:
+- uses: actions/deploy-pages@v4
