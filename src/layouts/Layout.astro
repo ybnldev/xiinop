@@ -1,0 +1,28 @@
+---
+import SEO from "../components/SEO.astro";
+
+const {
+  title = "Xiino — Creative Portfolio",
+  description = "Design, code, and interactive experiences.",
+  image,
+} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <SEO
+      title={title}
+      description={description}
+      image={image}
+    />
+  </head>
+
+  <body>
+    <slot />
+  </body>
+</html>
+
