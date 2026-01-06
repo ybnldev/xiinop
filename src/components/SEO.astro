@@ -1,0 +1,18 @@
+---
+const {
+  title = "Xiino — Creative Portfolio",
+  description = "Design, code, and interactive experiences.",
+  image = "/xiinop/preview.png",
+} = Astro.props;
+---
+
+<title>{title}</title>
+<meta name="description" content={description} />
+
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={image} />
+<meta property="og:type" content="website" />
+
+<meta name="twitter:card" content="summary_large_image" />
+
