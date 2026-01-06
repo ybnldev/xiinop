@@ -1,10 +1,10 @@
 // @ts-check
-import { defineConfig } from 'astro/config';
+import { defineConfig } from "astro/config";
 
 
 export default defineConfig({
-  site: 'https://ybnldev.github.io',
-  base: '/xiinop/',
-  output: 'static',
+  site: "https://ybnldev.github.io",
+  base: "/xiinop/",
+  output: "static",
 });
 
