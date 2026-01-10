@@ -20,3 +20,29 @@
   --duration-medium: 300ms;
 }
 
+/* Motion helpers */
+@media (prefers-reduced-motion: no-preference) {
+  .fade-in {
+    animation: fadeIn var(--duration-medium) var(--ease-soft) both;
+  }
+
+  .hover-lift {
+    transition: transform var(--duration-fast) var(--ease-soft);
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-4px);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
