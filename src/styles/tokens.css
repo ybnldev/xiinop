@@ -20,10 +20,12 @@
   --duration-medium: 300ms;
 }
 
+
 /* Motion helpers */
 @media (prefers-reduced-motion: no-preference) {
   .fade-in {
-    animation: fadeIn var(--duration-medium) var(--ease-soft) both;
+    opacity: 0;
+    animation: fadeIn var(--duration-medium) var(--ease-soft) 120ms forwards;
   }
 
   .hover-lift {
@@ -38,7 +40,7 @@
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(8px);
+    transform: translateY(12px);
   }
   to {
     opacity: 1;
