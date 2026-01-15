@@ -23,6 +23,10 @@ const {
   </head>
 
   <body style="background:var(--gradient-soft); color:var(--fg); font-family:var(--font-sans);">
+    <script>
+      document.body.dataset.ready = "true";
+    </script>
+
     <slot />
   </body>
 </html>

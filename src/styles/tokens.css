@@ -23,9 +23,28 @@
 
 /* Motion helpers */
 @media (prefers-reduced-motion: no-preference) {
-  .fade-in {
+ 
+
+  .hover-lift {
+    transition: transform var(--duration-fast) var(--ease-soft);
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-4px);
+  }
+}
+
+
+
+/* Reliable fade-in for static Astro */
+@media (prefers-reduced-motion: no-preference) {
+  [data-animate="fade"] {
     opacity: 0;
-    animation: fadeIn var(--duration-medium) var(--ease-soft) 120ms forwards;
+    transform: translateY(12px);
+  }
+
+  body[data-ready="true"] [data-animate="fade"] {
+    animation: fadeIn 500ms var(--ease-soft) forwards;
   }
 
   .hover-lift {
@@ -38,10 +57,6 @@
 }
 
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(12px);
-  }
   to {
     opacity: 1;
     transform: translateY(0);
