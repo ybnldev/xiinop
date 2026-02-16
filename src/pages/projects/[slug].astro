@@ -1,4 +1,5 @@
 ---
+import Layout from "../../layouts/Layout.astro";
 import { getCollection } from "astro:content";
 
 export async function getStaticPaths() {
@@ -12,15 +13,17 @@ export async function getStaticPaths() {
 const { project } = Astro.props;
 ---
 
-<section style="padding: 4rem 1.5rem; max-width: 900px; margin: auto;">
-  <h1 data-animate="fade">{project.data.title}</h1>
-  <p style="opacity: 0.8; margin-bottom: 2rem;">
-    {project.data.description}
-  </p>
+<Layout title={project.data.title}>
+  <section style="padding: 4rem 1.5rem; max-width: 900px; margin: auto;">
+    <h1 data-animate="fade">{project.data.title}</h1>
 
-  <article>
-    <slot />
-    {project.body}
-  </article>
-</section>
+    <p style="opacity: 0.8; margin-bottom: 2rem;">
+      {project.data.description}
+    </p>
+
+    <article>
+      {project.body}
+    </article>
+  </section>
+</Layout>
 
