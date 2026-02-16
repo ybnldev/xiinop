@@ -3,7 +3,7 @@ import { defineConfig } from "astro/config";
 
 
 export default defineConfig({
-  site: "https://ybnldev.github.io",
+  site: "https://xiinop.github.io",
   base: "/xiinop/",
   output: "static",
 });
