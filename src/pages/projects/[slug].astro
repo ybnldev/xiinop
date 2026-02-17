@@ -2,11 +2,12 @@
 import Layout from "../../layouts/Layout.astro";
 import { getCollection } from "astro:content";
 
+// Generate static paths for GitHub Pages
 export async function getStaticPaths() {
   const projects = await getCollection("projects");
   return projects.map((project) => ({
     params: { slug: project.slug },
-    props: { project }
+    props: { project },
   }));
 }
 
@@ -21,9 +22,7 @@ const { project } = Astro.props;
       {project.data.description}
     </p>
 
-    <article>
-      {project.body}
-    </article>
+    <article>{project.body}</article>
   </section>
 </Layout>
 
